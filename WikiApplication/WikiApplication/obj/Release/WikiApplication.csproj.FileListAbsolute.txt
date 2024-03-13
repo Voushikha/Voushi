@@ -1,0 +1,10 @@
+C:\Users\30077230\Desktop\WikiApplication\WikiApplication\bin\Release\WikiApplication.exe.config
+C:\Users\30077230\Desktop\WikiApplication\WikiApplication\bin\Release\WikiApplication.exe
+C:\Users\30077230\Desktop\WikiApplication\WikiApplication\bin\Release\WikiApplication.pdb
+C:\Users\30077230\Desktop\WikiApplication\WikiApplication\obj\Release\WikiApplication.csproj.AssemblyReference.cache
+C:\Users\30077230\Desktop\WikiApplication\WikiApplication\obj\Release\WikiApplication.Form1.resources
+C:\Users\30077230\Desktop\WikiApplication\WikiApplication\obj\Release\WikiApplication.Properties.Resources.resources
+C:\Users\30077230\Desktop\WikiApplication\WikiApplication\obj\Release\WikiApplication.csproj.GenerateResource.cache
+C:\Users\30077230\Desktop\WikiApplication\WikiApplication\obj\Release\WikiApplication.csproj.CoreCompileInputs.cache
+C:\Users\30077230\Desktop\WikiApplication\WikiApplication\obj\Release\WikiApplication.exe
+C:\Users\30077230\Desktop\WikiApplication\WikiApplication\obj\Release\WikiApplication.pdb

@@ -1,0 +1,5 @@
+C:\Users\30077230\Desktop\WikiApp\obj\Debug\WikiApp.csproj.AssemblyReference.cache
+C:\Users\30077230\Desktop\WikiApp\obj\Debug\WikiApp.Form1.resources
+C:\Users\30077230\Desktop\WikiApp\obj\Debug\WikiApp.Properties.Resources.resources
+C:\Users\30077230\Desktop\WikiApp\obj\Debug\WikiApp.csproj.GenerateResource.cache
+C:\Users\30077230\Desktop\WikiApp\obj\Debug\WikiApp.csproj.CoreCompileInputs.cache

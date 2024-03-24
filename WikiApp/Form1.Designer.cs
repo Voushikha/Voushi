@@ -30,12 +30,9 @@ namespace WikiApp
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonLoad = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.buttonLoad = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -52,16 +49,19 @@ namespace WikiApp
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.textBoxDefn = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // buttonLoad
             // 
-            this.button1.Location = new System.Drawing.Point(383, 491);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 34);
-            this.button1.TabIndex = 51;
-            this.button1.Text = "Open";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonLoad.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonLoad.Location = new System.Drawing.Point(383, 491);
+            this.buttonLoad.Name = "buttonLoad";
+            this.buttonLoad.Size = new System.Drawing.Size(104, 34);
+            this.buttonLoad.TabIndex = 51;
+            this.buttonLoad.Text = "LOAD";
+            this.buttonLoad.UseVisualStyleBackColor = false;
+            this.buttonLoad.Click += new System.EventHandler(this.ButtonLoad_Click);
             // 
             // textBox1
             // 
@@ -79,34 +79,15 @@ namespace WikiApp
             this.label1.TabIndex = 49;
             this.label1.Text = "Definition";
             // 
-            // listView2
-            // 
-            this.listView2.HideSelection = false;
-            this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
-            this.listView2.Location = new System.Drawing.Point(40, 215);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(315, 310);
-            this.listView2.TabIndex = 48;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
-            // buttonLoad
-            // 
-            this.buttonLoad.Location = new System.Drawing.Point(214, 128);
-            this.buttonLoad.Name = "buttonLoad";
-            this.buttonLoad.Size = new System.Drawing.Size(61, 30);
-            this.buttonLoad.TabIndex = 47;
-            this.buttonLoad.Text = "Load";
-            this.buttonLoad.UseVisualStyleBackColor = true;
-            // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(518, 491);
+            this.buttonSave.Location = new System.Drawing.Point(517, 491);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(103, 34);
             this.buttonSave.TabIndex = 46;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonSearch
             // 
@@ -116,6 +97,7 @@ namespace WikiApp
             this.buttonSearch.TabIndex = 45;
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // statusStrip1
             // 
@@ -181,6 +163,7 @@ namespace WikiApp
             this.buttonClear.TabIndex = 37;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // buttonEdit
             // 
@@ -190,6 +173,7 @@ namespace WikiApp
             this.buttonEdit.TabIndex = 36;
             this.buttonEdit.Text = "Edit";
             this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonDelete
             // 
@@ -199,6 +183,7 @@ namespace WikiApp
             this.buttonDelete.TabIndex = 35;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // ButtonAdd
             // 
@@ -208,6 +193,7 @@ namespace WikiApp
             this.ButtonAdd.TabIndex = 34;
             this.ButtonAdd.Text = "Add";
             this.ButtonAdd.UseVisualStyleBackColor = true;
+            this.ButtonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
             // 
             // listView1
             // 
@@ -221,7 +207,8 @@ namespace WikiApp
             this.listView1.TabIndex = 33;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged_1);
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.ListView1_SelectedIndexChanged);
+            this.listView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseClick);
             // 
             // columnHeader1
             // 
@@ -233,16 +220,23 @@ namespace WikiApp
             this.columnHeader2.Text = "Category";
             this.columnHeader2.Width = 238;
             // 
+            // textBoxDefn
+            // 
+            this.textBoxDefn.Location = new System.Drawing.Point(40, 215);
+            this.textBoxDefn.Multiline = true;
+            this.textBoxDefn.Name = "textBoxDefn";
+            this.textBoxDefn.Size = new System.Drawing.Size(296, 292);
+            this.textBoxDefn.TabIndex = 52;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(781, 565);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBoxDefn);
+            this.Controls.Add(this.buttonLoad);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listView2);
-            this.Controls.Add(this.buttonLoad);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.statusStrip1);
@@ -264,13 +258,16 @@ namespace WikiApp
 
         }
 
+        private EventHandler GetListView1_SelectedIndexChanged_1()
+        {
+            return this.listView1_SelectedIndexChanged_1;
+        }
+
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonLoad;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.Button buttonLoad;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.StatusStrip statusStrip1;
@@ -288,6 +285,7 @@ namespace WikiApp
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private EventHandler listView1_SelectedIndexChanged_1;
+        private System.Windows.Forms.TextBox textBoxDefn;
     }
 }
 
